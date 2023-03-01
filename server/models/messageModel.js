@@ -9,6 +9,11 @@ const messageSchema = mongoose.Schema(
         public: {
             type: Boolean,
             default: true
+        },
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: true,
+            ref: 'User'
         }
     },
     {

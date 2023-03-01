@@ -21,6 +21,7 @@ app.use(logger("dev"))
 app.use(errorHandler)
 
 app.use('/messages', require('./routes/messageRoutes'))
+app.use('/users', require('./routes/userRoutes'))
 
 
 app.listen(PORT, () => {
