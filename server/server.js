@@ -1,8 +1,13 @@
 const express = require("express");
+const colors = require('colors')
 const dotenv = require("dotenv").config();
+const connectDB = require('./config/db')
 const logger = require("morgan")
 const PORT = process.env.port || 3005;
 const { errorHandler } = require('./middleware/errorMiddleware')
+
+connectDB()
+
 const app = express();
 
 // app.get('/api/prompts', (req, res) => {
@@ -21,4 +26,4 @@ app.use('/messages', require('./routes/messageRoutes'))
 app.listen(PORT, () => {
     console.log(`Server started on PORT:${PORT}`);
     console.log(`Please visit the website at http://localhost:${PORT}`);
-});
+})
