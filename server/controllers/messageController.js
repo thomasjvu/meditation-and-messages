@@ -58,15 +58,13 @@ const putSingleMessage = asyncHandler(async (req, res) => {
         throw new Error('Message not found!')
     }
 
-    const user = await User.findById(req.user.id)
-
-    if (!user) {
+    if (!req.user) {
         res.status(401)
         throw new Error('User not found!')
     }
 
     // Make sure the logged-in user matches the message's user
-    if (message.user.toString() !== user.id) {
+    if (message.user.toString() !== req.user.id) {
         res.status(401)
         throw new Error('User not authorized!')
     }
@@ -88,15 +86,13 @@ const deleteSingleMessage = asyncHandler(async (req, res) => {
         throw new Error('Message not found!')
     }
 
-    const user = await User.findById(req.user.id)
-
-    if (!user) {
+    if (!req.user) {
         res.status(401)
         throw new Error('User not found!')
     }
 
     // Make sure the logged-in user matches the message's user
-    if (message.user.toString() !== user.id) {
+    if (message.user.toString() !== req.user.id) {
         res.status(401)
         throw new Error('User not authorized!')
     }

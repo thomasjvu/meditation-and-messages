@@ -3,16 +3,12 @@ const colors = require('colors')
 const dotenv = require("dotenv").config();
 const connectDB = require('./config/db')
 const logger = require("morgan")
-const PORT = process.env.port || 3005;
+const PORT = process.env.PORT || 3005;
 const { errorHandler } = require('./middleware/errorMiddleware')
 
 connectDB()
 
 const app = express();
-
-// app.get('/api/prompts', (req, res) => {
-//     res.send('Get Prompts')
-// })
 
 // Middleware
 app.use(express.json())
