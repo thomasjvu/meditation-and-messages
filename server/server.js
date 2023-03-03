@@ -16,8 +16,9 @@ app.use(express.urlencoded({extended: false}))
 app.use(logger("dev"))
 app.use(errorHandler)
 
-app.use('/messages', require('./routes/messageRoutes'))
+// app.use('/messages', require('./routes/messageRoutes'))
 app.use('/users', require('./routes/userRoutes'))
+app.use('/notes', require('./routes/noteRoutes'))
 
 
 app.listen(PORT, () => {

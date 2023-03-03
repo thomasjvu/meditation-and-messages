@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createMessage } from '../features/messages/messageSlice'
+import { createNote } from '../features/notes/noteSlice'
 
-function MessageForm() {
+function NoteForm() {
 
     const [text, setText] = useState("");
 
@@ -11,7 +11,7 @@ function MessageForm() {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        dispatch(createMessage({text}))
+        dispatch(createNote({text}))
         setText('')
     };
 
@@ -19,7 +19,7 @@ function MessageForm() {
         <section className="form">
             <form onSubmit={onSubmit}>
                 <div className="form-group">
-                    <label htmlFor="text">Message</label>
+                    <label htmlFor="text">Note</label>
                     <input
                         type="text"
                         name="text"
@@ -29,11 +29,11 @@ function MessageForm() {
                     />
                 </div>
                 <div className="form-group">
-                    <button className="btn btn-block" type="submit">Add Message</button>
+                    <button className="btn btn-block" type="submit">Add Note</button>
                 </div>
             </form>
         </section>
     );
 }
 
-export default MessageForm;
+export default NoteForm;
