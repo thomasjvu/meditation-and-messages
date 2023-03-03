@@ -4,10 +4,7 @@ function Footer() {
     return (
         <div>
             <h1>Footer</h1>
-            <h2>Hello</h2>
-            <h3>
-                Henlo!
-            </h3>
+            <h2>Copyright</h2>
         </div>
     )
 }
