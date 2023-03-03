@@ -11,7 +11,7 @@ function NoteForm() {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        dispatch(createNote({text}))
+        dispatch(createNote({ text }))
         setText('')
     };
 
